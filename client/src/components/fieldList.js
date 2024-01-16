@@ -22,7 +22,7 @@ export default function FieldList() {
   // This method fetches the fields from the database.
  useEffect(() => {
    async function getFields() {
-     const response = await fetch(`http://localhost:5000/field/`);
+     const response = await fetch(`http://localhost:3000/field/`);
       if (!response.ok) {
        const message = `An error occurred: ${response.statusText}`;
        window.alert(message);
@@ -36,7 +36,7 @@ export default function FieldList() {
  }, [fields.length]);
   // This method will delete a field
  async function deleteField(id) {
-   await fetch(`http://localhost:5000/${id}`, {
+   await fetch(`http://localhost:3000/${id}`, {
      method: "DELETE"
    });
     const newFields = fields.filter((el) => el._id !== id);
