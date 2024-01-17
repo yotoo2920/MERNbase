@@ -36,11 +36,7 @@ export default function FieldList() {
  }, [fields.length]);
   // This method will delete a field
  async function deleteField(id) {
-<<<<<<< HEAD
-   await fetch(`http://localhost:3000/${id}`, {
-=======
    await fetch(`http://localhost:5001/${id}`, {
->>>>>>> ee7f857 (added typescript to the project and updated the files to port 5001)
      method: "DELETE"
    });
     const newFields = fields.filter((el) => el._id !== id);

@@ -44,7 +44,7 @@ export default function Edit() {
 		size: form.size,
 	};
 		// This will send a post request to update the data in the database.
-	await fetch(`http://localhost:3000/update/${params.id}`, {
+	await fetch(`http://localhost:5001/update/${params.id}`, {
 		method: "POST",
 		body: JSON.stringify(editedField),
 		headers: {
