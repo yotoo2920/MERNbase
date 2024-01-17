@@ -13,7 +13,7 @@ export default function Edit() {
 	useEffect(() => {
 		async function fetchData() {
 			const id = params.id.toString();
-			const response = await fetch(`http://localhost:3000/fields/${params.id.toString()}`);
+			const response = await fetch(`http://localhost:5001/fields/${params.id.toString()}`);
 			if (!response.ok) {
 				const message = `An error has occurred: ${response.statusText}`;
 				window.alert(message);
@@ -25,7 +25,7 @@ export default function Edit() {
 				navigate("/");
 				return;
 			}
-			setForm(record);
+			setForm(field);
 		}
 		fetchData();
 		return;
