@@ -19,7 +19,7 @@ export default function Create() {
    e.preventDefault();
     // When a post request is sent to the create url, we'll add a new record to the database.
    const newField = { ...form };
-    await fetch("http://localhost:3000/fields/add", {
+    await fetch("http://localhost:5001/fields/add", {
      method: "POST",
      headers: {
        "Content-Type": "application/json",
