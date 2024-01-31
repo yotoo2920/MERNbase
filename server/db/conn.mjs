@@ -5,15 +5,13 @@ const connectionString = process.env.ATLAS_URI || "";
 const client = new MongoClient(connectionString);
 
 let conn;
-
 try {
+  console.log("Connecting to MongoDB Atlas...");
   conn = await client.connect();
-  console.log("Successfully connected to MongoDB."); 
 } catch(e) {
   console.error(e);
 }
 
-let db = conn.db("main_db");
+let db = conn.db("baseDB");
 
-// Export default db;
 export default db;

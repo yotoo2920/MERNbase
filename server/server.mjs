@@ -1,18 +1,17 @@
 import express from "express";
 import cors from "cors";
-import "./loadEnviroment.mjs";
-import fields from "./routes/fields.mjs";
+import "./loadEnvironment.mjs";
+import records from "./routes/record.mjs";
 
-const PORT = process.env.PORT || 5050;
+const PORT = 5050;
 const app = express();
 
 app.use(cors());
 app.use(express.json());
 
-// Load the /fields routes
-app.use("/fields", fields);
+app.use("/record", records);
 
-// Start the Express server
+// start the Express server
 app.listen(PORT, () => {
-  console.log(`Server is running on port: ${PORT}`);
+  console.log(`Server listening on port ${PORT}`);
 });
